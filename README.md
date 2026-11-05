@@ -35,11 +35,11 @@ This is a research foundation, not a production vulnerability scanner. It does n
 
 ### Automated test evidence
 
-![SecureGuard automated test results](docs/screenshots/automated-tests.png)
+![SecureGuard automated test results](doc/screenshots/automated-tests.png)
 
 ### Security assessment evidence
 
-![SecureGuard vulnerability assessment results](docs/screenshots/security-assessment.png)
+![SecureGuard vulnerability assessment results](doc/screenshots/security-assessment.png)
 
 ## Architecture
 
