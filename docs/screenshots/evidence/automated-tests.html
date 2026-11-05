@@ -1,0 +1,41 @@
+<!doctype html><html><head><meta charset="utf-8"><title>SecureGuard automated test evidence</title><style>
+  * { box-sizing: border-box; }
+  :root { color-scheme: dark; font-family: Inter, "Segoe UI", Arial, sans-serif; }
+  body { margin: 0; width: 1440px; min-height: 900px; color: #eef8f4; background: radial-gradient(circle at 8% 12%, #16483b 0, transparent 33%), #061410; }
+  main { width: 100%; min-height: 900px; padding: 42px 72px; }
+  header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+  .brand { display: flex; align-items: center; gap: 13px; font-size: 21px; font-weight: 800; }
+  .shield { display: grid; place-items: center; width: 38px; height: 43px; color: #052019; background: #3ce2aa; font-weight: 900; clip-path: polygon(50% 0,100% 16%,90% 76%,50% 100%,10% 76%,0 16%); }
+  .stamp { color: #829b92; font: 13px ui-monospace, SFMono-Regular, Consolas, monospace; }
+  .eyebrow { margin: 0 0 14px; color: #3ce2aa; font-size: 13px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
+  h1 { margin: 0; font-size: 54px; line-height: 1.02; letter-spacing: -.045em; }
+  .subtitle { color: #9db4ac; font-size: 17px; line-height: 1.5; }
+  .panel { border: 1px solid #285044; border-radius: 18px; background: rgba(8, 31, 25, .82); box-shadow: 0 24px 70px rgba(0,0,0,.28); }
+  .pass { color: #3ce2aa; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; color: #3ce2aa; background: #143e32; border: 1px solid #2f6d5a; border-radius: 99px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+  footer { display: flex; justify-content: space-between; margin-top: 22px; color: #718b82; font-size: 12px; }
+
+  .summary { display: grid; grid-template-columns: 1fr auto; align-items: end; margin-bottom: 24px; }
+  .score { text-align: right; } .score strong { display:block; color:#3ce2aa; font-size:68px; line-height:.9; letter-spacing:-.06em; } .score span { color:#8fa79f; font-size:14px; }
+  .grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 18px; align-items: stretch; }
+  .suite { padding: 23px; min-height: 520px; }
+  .suite-head { display:flex; justify-content:space-between; align-items:flex-start; padding-bottom:17px; border-bottom:1px solid #21463b; }
+  .suite-label { margin:0 0 5px; color:#9fb5ae; font-size:13px; } .suite strong { font-size:28px; }
+  ul { list-style:none; margin:17px 0 0; padding:0; display:grid; gap:10px; }
+  li { display:grid; grid-template-columns:18px 1fr; gap:8px; color:#c5d5d0; font-size:13px; line-height:1.35; }
+  li span { color:#3ce2aa; font-weight:900; }
+</style></head><body><main>
+  <header><div class="brand"><span class="shield">S</span>SecureGuard</div><div class="stamp">Jest 29.7.0 · Supertest 7.1.4</div></header>
+  <div class="summary"><div><p class="eyebrow">Automated verification</p><h1>All test suites passed.</h1><p class="subtitle">Fresh results exported directly from three Jest JSON reports.</p></div><div class="score"><strong>22/22</strong><span>tests passed · 100% pass rate</span></div></div>
+  <div class="grid"><section class="suite panel">
+      <div class="suite-head"><div><p class="suite-label">Authentication &amp; API</p><strong>10/10</strong></div><span class="badge">✓ passed</span></div>
+      <ul><li><span>✓</span>registers a user and hashes the password</li><li><span>✓</span>rejects duplicate registration without exposing details</li><li><span>✓</span>rejects invalid login with a generic error</li><li><span>✓</span>logs in successfully and rotates into an authenticated session</li><li><span>✓</span>blocks unauthenticated access</li><li><span>✓</span>enforces role-based access</li><li><span>✓</span>allows an administrator through role protection</li><li><span>✓</span>logout invalidates the session</li><li><span>✓</span>rate limits repeated failed logins</li><li><span>✓</span>health check reports status</li></ul>
+    </section><section class="suite panel">
+      <div class="suite-head"><div><p class="suite-label">Mitigation Laboratory</p><strong>6/6</strong></div><span class="badge">✓ passed</span></div>
+      <ul><li><span>✓</span>vulnerable demonstrations are disabled by default</li><li><span>✓</span>SQL injection string cannot bypass secure authentication</li><li><span>✓</span>XSS output is encoded and protected by security headers</li><li><span>✓</span>record access is scoped to the authenticated owner</li><li><span>✓</span>secure session cookie has defensive attributes</li><li><span>✓</span>secure login is rate limited</li></ul>
+    </section><section class="suite panel">
+      <div class="suite-head"><div><p class="suite-label">Security Assessment</p><strong>6/6</strong></div><span class="badge">✓ passed</span></div>
+      <ul><li><span>✓</span>SQL injection: vulnerable behavior detected and secure behavior mitigated</li><li><span>✓</span>XSS: vulnerable reflection detected and secure output encoded</li><li><span>✓</span>access control: vulnerable IDOR detected and owner scoping enforced</li><li><span>✓</span>session security: weak cookie detected and hardened cookie verified</li><li><span>✓</span>rate limiting: exposed login detected and secure endpoint bounded</li><li><span>✓</span>measures response-time overhead without asserting a fabricated threshold</li></ul>
+    </section></div>
+  <footer><span>Source: security-results/*.json</span><span>Generated 5 Nov 2026, 19:41 · No results manually entered</span></footer>
+</main></body></html>

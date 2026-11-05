@@ -1,0 +1,14 @@
+{
+  "name": "@secureguard/security-tests",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules ../node_modules/jest/bin/jest.js --runInBand --json --outputFile=../security-results/jest-results.json",
+    "report": "node src/generate-report.js"
+  },
+  "devDependencies": {
+    "jest": "29.7.0",
+    "supertest": "7.1.4"
+  }
+}

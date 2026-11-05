@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique @db.VarChar(254)
+  passwordHash String   @db.VarChar(100)
+  role         Role     @default(USER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Session {
+  sid       String   @id @db.VarChar(128)
+  data      Json
+  expiresAt DateTime
+
+  @@index([expiresAt])
+}
+
