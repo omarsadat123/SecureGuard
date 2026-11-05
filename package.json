@@ -1,0 +1,35 @@
+{
+  "name": "secureguard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Security assessment and vulnerability prevention platform for web applications",
+  "workspaces": [
+    "frontend",
+    "backend",
+    "security-lab",
+    "security-tests"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w frontend && npm run build -w backend",
+    "test": "npm run test -w backend && npm run test -w security-lab && npm run test -w security-tests",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prisma:generate": "npm run prisma:generate -w backend"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.1",
+    "concurrently": "9.2.5",
+    "eslint": "9.39.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react": "7.37.5",
+    "globals": "16.5.0",
+    "prettier": "3.6.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
